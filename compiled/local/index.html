@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="ie ie6 ie-lte9 ie-lte8 ie-lte7 no-js" lang="en">
+<![endif]-->
+<!--[if IE 7]><html class="ie ie7 ie-lte9 ie-lte8 ie-lte7 no-js" lang="en">
+<![endif]-->
+<!--[if IE 8]><html class="ie ie8 ie-lte9 ie-lte8 no-js" lang="en">
+<![endif]-->
+<!--[if IE 9]><html class="ie9 ie-lte9 no-js" lang="en">
+<![endif]-->
+<!--[if (gt IE 9)|!(IE)] <!-->
+<html ng-controller="baseController">
+  <!-- <![endif]-->
+  <title>Tony Hall E-Portfolio: {{ title }}</title>
+  <head>
+    <base href="">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="E-Portfolio">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="resources/pub/styles/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="resources/pub/styles/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="resources/pub/styles/base.css">
+  </head>
+  <body class="container-fluid">
+    <nav class="navbar navbar-default navbar-fixed-top row">
+      <div class="col-md-offset-1 col-lg-offset-1 navbar-brand"><img src="resources/pub/images/brand-logo.png" class="col-lg-8 col-md-8 img-thumbnail off-white"></div>
+      <h1 id="site-title" class="col-md-offset-5 col-lg-offset-5">Tony Hall E-Porfolio</h1>
+      <div class="navbar-header secondary row off-white">
+        <div class="container col-md-offset-4 col-lg-offset-4">
+          <ul role="navigation" class="nav navbar-nav">
+            <li><a href="#/resume">Resume             </a></li>
+            <li><a href="#/video-edit">Video Editing</a></li>
+            <li role="presentation" class="dropdown"><a data-toggle="dropdown" role="button" href="#" aria-expanded="false" class="dropdown-toggle">Work Samples</a>
+              <ul role="menu" class="dropdown-menu">
+                <li> <a href="#/work-samples/high-charts">Highcharts and JSON</a></li>
+                <li> <a href="#/work-samples/datatable-services">DataTables</a></li>
+                <li> <a href="#/php">PHP</a></li>
+              </ul>
+            </li>
+            <li role="presentation" class="dropdown"><a data-toggle="dropdown" role="button" href="#" aria-expanded="false" class="dropdown-toggle">Web</a>
+              <ul role="menu" class="dropdown-menu">
+                <li> <a href="#/web/themes">Themes</a></li>
+                <li> <a href="#/web/as-flash">Adobe Flash</a></li>
+              </ul>
+            </li>
+            <li role="presentation" class="dropdown"><a data-toggle="dropdown" role="button" href="#" aria-expanded="false" class="dropdown-toggle">Key Projects</a>
+              <ul role="menu" class="dropdown-menu">
+                <li> <a href="#/professional-samples">Professional Code Samples</a></li>
+                <li> <a href="#/djbww">DJBlazeWorldwide.com</a></li>
+                <li> <a href="#/ngal">NorthgateAssistedLiving.com</a></li>
+              </ul>
+            </li>
+            <li><a href="#/contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section class="col-md-12 col-lg-12 off-white row">
+      <div id="main" ng-view class="minHeight container"></div>
+    </section>
+    <footer class="col-md-12 col-lg-12 navbar navbar-fixed-bottom pine-green row">
+      <div class="row"> 
+        <p class="col-md-offset-3 col-lg-offset-3 text-centered">Footer</p>
+      </div>
+    </footer>
+    <script src="resources/pub/js/config/require-config.js"></script>
+    <script src="resources/pub/js/lib/require.js" data-main="../app/global"></script>
+  </body>
+</html>
