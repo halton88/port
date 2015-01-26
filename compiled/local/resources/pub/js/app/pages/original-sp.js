@@ -1,3 +1,3 @@
 (function(){
-  require(['app.global'], function(){});
+  require([], function(){});
 }).call(this);

@@ -32,7 +32,8 @@ pine-green = #040F01
 	height 2em
 	width 2em
 .centered
-	margin auto
+	float none
+	margin 0 auto
 #self
 	width 20%
 #overlay
@@ -60,24 +61,27 @@ pine-green = #040F01
 		border 0
 body
 	// font-family "Arial Rounded MT Bold","Calibri","Palatino","Lucida Sans Typewriter"
-	padding 10% 0
+	padding 15rem 0
+	// background url('../images/lines.jpg') .4
 	#site-title
 		font-family "Calibri"
 	.minHeight
 		height 500px
 		min-height 20%
 		max-height 100%
-	nav 
-		.dropdown:hover .dropdown-menu
-		    display block
+	nav
+		.dropdown:hover
+			text-decoration underline
+			background-color light-gray
+			> .dropdown-menu
+				display block 	
 		ul a 
 		font-family "Calibri"
 		font-weight bold
 		color prim-blue !important
-		:hover
-			text-decoration underline
-			background-color light-gray 
+
 	.navbar-brand
-		a 
-			> img
-				width 107px
+		> img
+			width 110px
+	footer
+		height 10%

@@ -1,41 +1,34 @@
-.col-md-offset-1.col-lg-offset-1.navbar-brand
-  img.col-lg-8.col-md-8.img-thumbnail.off-white(src='resources/pub/images/brand-logo.png')
-    a(href="#/")
-h1.col-md-offset-5.col-lg-offset-5#site-title Tony Hall E-Porfolio
-.navbar-header.secondary.row.off-white
-  .container.col-md-offset-4.col-lg-offset-4
+a.col-md-offset-1.col-lg-offset-1.navbar-brand(href="#/")
+  img.img-thumbnail.off-white(src='resources/pub/images/brand-logo.png')
+h2.text-center#site-title Tony Hall E-Porfolio
+.row.navbar-header.off-white.col-md-offset-5.col-lg-offset-5
+  .col-md-12.col-lg-12
     ul(role="navigation").nav.navbar-nav
       li
-        a(href='#/resume') Resume             
+        a.small(href='#/')
+          span.glyphicon.glyphicon-home
       li
-        a(href='#/video-edit') Video Editing
-      li.dropdown(role="presentation")
-        a.dropdown-toggle(data-toggle="dropdown", role="button", href='#', aria-expanded="false") Work Samples
-        ul.dropdown-menu(role="menu")
-          li 
-            a(href='#/work-samples/high-charts') Highcharts and JSON
-          li 
-            a(href='#/work-samples/datatable-services') DataTables
-          li 
-            a(href='#/php') PHP
-      li.dropdown(role="presentation")
-        a.dropdown-toggle(data-toggle="dropdown", role="button", href='#', aria-expanded="false") Web
-        ul.dropdown-menu(role="menu")
-          li 
-            a(href='#/web/themes') Themes
-          li 
-            a(href='#/web/as-flash') Adobe Flash
-      li.dropdown(role="presentation")
-        a.dropdown-toggle(data-toggle="dropdown", role="button", href='#', aria-expanded="false") Key Projects
-        ul.dropdown-menu(role="menu")
-          li 
-            a(href='#/professional-samples') Professional Code Samples
-          li 
-            a(href='#/djbww') DJBlazeWorldwide.com
-          li 
-            a(href='#/ngal') NorthgateAssistedLiving.com
+        a.small(href='#/resume') Resume
       li
-        a(href='#/contact') Contact
+        a.small(href='#/video-edit') Video Editing
+      li.dropdown(role="presentation")
+        a.small.dropdown-toggle(data-toggle="dropdown", role="button", href='#', aria-expanded="false") Web
+        ul.dropdown-menu(role="menu")
+          li 
+            a.small(href='#/web/themes') Themes
+          //- li 
+          //-   a.small(href='#/web/as-flash') Adobe Flash
+          li 
+            a.small(href='#/web/updated-sp') Updated Capstone
+          li 
+            a.small(href='#/web/original-sp') Original Capstone
+      li.dropdown(role="presentation")
+        a.small.dropdown-toggle(data-toggle="dropdown", role="button", href='#', aria-expanded="false") Work Samples
+        ul.dropdown-menu(role="menu")
+          li 
+            a.small(href='/app/home', target='_blank') PHP Application
+      //- li
+      //-   a(href='#/contact') Contact
 //- .container.row.col-md-offset-1.col-lg-offset-1
 //-   ol.breadcrumb
 //-     li

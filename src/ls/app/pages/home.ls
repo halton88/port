@@ -1,1 +1,1 @@
-require <[ app.global ]> !->
+require <[ ]> !->

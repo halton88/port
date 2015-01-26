@@ -62,15 +62,16 @@
 
 /* line 34 : C:\wamp\www\port\src\stylus\base.styl */
 .centered {
-  margin: auto;
+  float: none;
+  margin: 0 auto;
 }
 
-/* line 36 : C:\wamp\www\port\src\stylus\base.styl */
+/* line 37 : C:\wamp\www\port\src\stylus\base.styl */
 #self {
   width: 20%;
 }
 
-/* line 38 : C:\wamp\www\port\src\stylus\base.styl */
+/* line 39 : C:\wamp\www\port\src\stylus\base.styl */
 #overlay {
   background-color: rgba(170,170,170,0.3);
   position: fixed;
@@ -81,7 +82,7 @@
   z-index: 9999;
 }
 
-/* line 46 : C:\wamp\www\port\src\stylus\base.styl */
+/* line 47 : C:\wamp\www\port\src\stylus\base.styl */
 #loader {
   display: table;
   top: 0;
@@ -98,48 +99,56 @@
   text-align: center;
 }
 
-/* line 58 : C:\wamp\www\port\src\stylus\base.styl */
+/* line 59 : C:\wamp\www\port\src\stylus\base.styl */
 #loader div img {
   display: table-cell;
   border: 0;
 }
 
-/* line 61 : C:\wamp\www\port\src\stylus\base.styl */
+/* line 62 : C:\wamp\www\port\src\stylus\base.styl */
 body {
-  padding: 10% 0;
+  padding: 15rem 0;
 }
 
-/* line 64 : C:\wamp\www\port\src\stylus\base.styl */
+/* line 66 : C:\wamp\www\port\src\stylus\base.styl */
 body #site-title {
   font-family: "Calibri";
 }
 
-/* line 66 : C:\wamp\www\port\src\stylus\base.styl */
+/* line 68 : C:\wamp\www\port\src\stylus\base.styl */
 body .minHeight {
   height: 500px;
   min-height: 20%;
   max-height: 100%;
 }
 
-/* line 70 : C:\wamp\www\port\src\stylus\base.styl */
+/* line 72 : C:\wamp\www\port\src\stylus\base.styl */
+body nav {
+  ul: a;
+  font-family: "Calibri";
+  font-weight: bold;
+  color: #033 !important;
+}
 
-/* line 71 : C:\wamp\www\port\src\stylus\base.styl */
-body nav .dropdown:hover .dropdown-menu,
-body nav display block,
-body nav ul a,
-body nav font-family "Calibri",
-body nav font-weight bold,
-body nav color prim-blue,
-body nav :hover {
+/* line 73 : C:\wamp\www\port\src\stylus\base.styl */
+body nav .dropdown:hover {
   text-decoration: underline;
   background-color: light-gray;
 }
 
-/* line 80 : C:\wamp\www\port\src\stylus\base.styl */
+/* line 76 : C:\wamp\www\port\src\stylus\base.styl */
+body nav .dropdown:hover > .dropdown-menu {
+  display: block;
+}
 
-/* line 81 : C:\wamp\www\port\src\stylus\base.styl */
+/* line 83 : C:\wamp\www\port\src\stylus\base.styl */
 
-/* line 82 : C:\wamp\www\port\src\stylus\base.styl */
-body .navbar-brand a > img {
-  width: 107px;
+/* line 84 : C:\wamp\www\port\src\stylus\base.styl */
+body .navbar-brand > img {
+  width: 110px;
+}
+
+/* line 86 : C:\wamp\www\port\src\stylus\base.styl */
+body footer {
+  height: 10%;
 }

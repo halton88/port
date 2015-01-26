@@ -57,6 +57,7 @@
       'ang.touch': 'angular/angular-touch',
       'bootstrap': 'bootstrap.min',
       'highcharts': 'highcharts/highcharts',
+      'swf.modified': '../scripts/swfobject_modified',
       'app.global': '../app/global',
       'app.global.functions': '../app/functions',
       'app.controller': '../app/controllers',
@@ -65,10 +66,15 @@
       'original-sp': '../app/pages/original-sp',
       'updated-sp': '../app/pages/updated-sp',
       'themes': '../app/pages/themes',
-      'video-editing': '../app/pages/video-editing',
-      'dt-service': '../app/pages/work-samples/datatable-services',
-      'examples-charts': '../app/pages/work-samples/high-charts',
-      'base.module': '../mod/baseModule'
+      'as-flash': '../app/pages/as-flash',
+      'resume': '../app/pages/resume',
+      'video-edit': '../app/pages/video-edit',
+      'datatable-services': '../app/pages/datatable-services',
+      'charts': '../app/pages/high-charts',
+      'base.module': '../mod/base-module',
+      'hc.pie': '../scripts/charts/pie/pie-script',
+      'hc.column': '../scripts/charts/column/column-script',
+      'hc.donut': '../scripts/charts/donut/donut-script'
     },
     shim: {
       'jquery-ui': {
@@ -222,11 +228,20 @@
       'datatables': {
         deps: ['jquery']
       },
-      'example-charts': {
+      'hc.pie': {
         deps: ['jquery', 'highcharts']
       },
-      'dt-service': {
+      'hc.column': {
+        deps: ['jquery', 'highcharts']
+      },
+      'charts': {
+        deps: ['hc.pie', 'hc.column', 'hc.donut']
+      },
+      'datatable-services': {
         deps: ['jquery', 'datatables']
+      },
+      'as-flash': {
+        deps: ['swf.modified']
       }
     }
   };
