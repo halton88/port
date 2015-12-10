@@ -1,0 +1,70 @@
+.linked-in {
+  background: url("bootstrap/glyphicons_social/png/social-18-linked-in.png") #d3d3d3 no-repeat;
+  height: 2em;
+  width: 2em;
+}
+.centered {
+  float: none;
+  margin: 0 auto;
+}
+#self {
+  width: 20%;
+}
+#overlay {
+  background-color: rgba(170,170,170,0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+#loader {
+  display: table;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: transparent;
+  z-index: 10000;
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+  vertical-align: middle;
+  text-align: center;
+}
+#loader div img {
+  display: table-cell;
+  border: 0;
+}
+body {
+  padding: 15rem 0;
+}
+body #site-title {
+  font-family: "Calibri";
+}
+body .minHeight {
+  height: 500px;
+  min-height: 20%;
+  max-height: 100%;
+}
+body nav {
+  ul: a;
+  font-family: "Calibri";
+  font-weight: bold;
+  color: #033 !important;
+}
+body nav .dropdown:hover {
+  text-decoration: underline;
+  background-color: light-gray;
+}
+body nav .dropdown:hover > .dropdown-menu {
+  display: block;
+}
+body .navbar-brand > img {
+  width: 110px;
+}
+body footer {
+  height: 10%;
+}

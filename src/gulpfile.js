@@ -1,13 +1,13 @@
-var stripComments, notifier, parentDir, gulp, gulpConcat, gulpUtil, gulpJshint, gulpStylus, streamqueue, gulpPlumber, nib, jshint, gutil, plumber, production, gulpJade, gulpBower, mainBowerFiles, gulpFilter,livescript;
+var stripComments, notifier, parentDir, modules_dir, gulp, gulpConcat, gulpUtil, gulpJshint, gulpStylus, streamqueue, gulpPlumber, nib, jshint, gutil, plumber, production, gulpJade, gulpFilter, livescript;
 
-require('matchdep').filterDev('gulp-*').forEach(function(module){
+require('matchdep').filterDev('gulp-*').forEach(function (module) {
     global[module.replace(/^gulp-/, '')] = require(module);
 });
 
 stripComments = require('gulp-strip-comments');
 notifier = require('node-notifier');
 parentDir = '..';
-
+modules_dir = 'node_modules';
 gulp = require('gulp');
 gulpConcat = require('gulp-concat');
 gulpUtil = require('gulp-util');
@@ -20,9 +20,9 @@ jshint = require('gulp-jshint');
 livescript = require('gulp-livescript');
 gutil = gulpUtil;
 
-plumber = function(){
+plumber = function () {
     return gulpPlumber({
-        errorHandler: function(it){
+        errorHandler: function (it) {
             gutil.beep();
             return gutil.log(gutil.colors.red(it.toString()));
         }
@@ -33,16 +33,16 @@ if (gutil.env.env === 'production') {
     production = true;
 }
 
-gulp.task('default', 'build');
+gulp.task('default', ['build']);
 
-gulp.task('build', ['jade-compile', 'bower', 'ls:copy', 'css'], function(){
+gulp.task('build', ['jade-compile', 'js:copy', 'ls:copy', 'css'], function () {
     notifier.notify({
         title: 'Compilation Complete',
         message: "The code has been compiled in the project's root directory"
     });
 });
 
-gulp.task('dev', ['jade-compile', 'ls:copy', 'ls:app', 'css'], function(done){
+gulp.task('dev', ['jade-compile', 'ls:copy', 'ls:app', 'css'], function (done) {
     gulp.watch(['jade/**/*.jade'], ['jade-compile']);
     return gulp.watch('stylus/**/*.styl', ['css']);
 });
@@ -50,24 +50,18 @@ gulp.task('dev', ['jade-compile', 'ls:copy', 'ls:app', 'css'], function(done){
 gulpJade = require('gulp-jade');
 
 // task for rendering jade files to HTML
-gulp.task('jade-compile', function(){
+gulp.task('jade-compile', function () {
     // only return the compiled index to root
     return gulp.src(['jade/index.jade']).pipe(gulpJade({
-        pretty: pretty,
-        basedir: parentDir
+        pretty: true,
+        basedir: parentDir + "/web"
     })).pipe(gulp.dest(parentDir + "/web"));
 });
 
-gulpBower = require('gulp-bower');
-mainBowerFiles = require('main-bower-files');
 gulpFilter = require('gulp-filter');
 gulpConcat = require('gulp-concat');
 
-gulp.task('bower', function(){
-    return gulpBower();
-});
-
-gulp.task('ls:copy', ['bower'], function(){
+gulp.task('ls:copy', function () {
     var s;
     s = streamqueue({
         objectMode: true
@@ -78,22 +72,34 @@ gulp.task('ls:copy', ['bower'], function(){
         .pipe(stripComments())
         .pipe(jshint())
         .pipe(jshint.reporter('jshint-stylish'))
-        .pipe(gulpConcat('main.js'))
-        .pipe(gulp.dest(parentDir + "/web"));
+        .pipe(gulpConcat('scripts.js'))
+        .pipe(gulp.dest(parentDir + "/js"));
     return s.done();
 });
 
-gulp.task('css', ['bower'], function(){
-    var bower, styl, s;
-    bower = gulp.src(mainBowerFiles()).pipe(gulpFilter(function(it){
-        return /\.css$/.exec(it.path);
-    }));
-    styl = gulp.src('stylus/**/*.styl').pipe(gulpFilter(function(it) {
+gulp.task('js:copy', function () {
+    var s;
+    s = streamqueue({
+        objectMode: true
+    });
+
+    gulp.src(['js/**/*.js'])
+        .pipe(stripComments())
+        .pipe(jshint())
+        .pipe(jshint.reporter('jshint-stylish'))
+        .pipe(gulpConcat('main.js'))
+        .pipe(gulp.dest(parentDir + "/web/js"));
+    return s.done();
+});
+
+gulp.task('css', function () {
+    var styl, s;
+    styl = gulp.src('stylus/**/*.styl').pipe(gulpFilter(function (it) {
         return !/\/_[^/]+\.styl$/.test(it.path);
     })).pipe(gulpStylus({
         use: [nib()],
         'import': ['nib']
-    })).pipe(gulpConcat('styles.css')).pipe(gulp.dest(parentDir+"/web"));
+    })).pipe(gulpConcat('styles.css')).pipe(gulp.dest(parentDir + "/web"));
 
     return s = streamqueue({
         objectMode: true

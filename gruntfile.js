@@ -69,7 +69,7 @@ module.exports = function(grunt) {
               src: [ 'compiled/live' ]
             }
         },
-        
+
         stylus: {
           options: {
             use: [ require('nib') ],
@@ -90,21 +90,21 @@ module.exports = function(grunt) {
               report: 'min'
             },
             local: {
-              expand: true, 
-              cwd: 'resources/styles/', 
-              src: ['*.css'], 
-              dest: 'compiled/local/resources/pub/styles', 
-              ext: '.css'                            
+              expand: true,
+              cwd: 'resources/styles/',
+              src: ['*.css'],
+              dest: 'compiled/local/resources/pub/styles',
+              ext: '.css'
             },
             live: {
-              expand: true, 
-              cwd: 'resources/styles/', 
-              src: ['*.css'], 
-              dest: 'compiled/live/resources/pub/styles', 
-              ext: '.css' 
+              expand: true,
+              cwd: 'resources/styles/',
+              src: ['*.css'],
+              dest: 'compiled/live/resources/pub/styles',
+              ext: '.css'
             }
         },
-        
+
         lsc: {
           local: {
             files: [{ expand: true, cwd: 'src/ls', src: ['**/*.ls'], dest: 'compiled/local/resources/pub/js', ext: '.js' }]
@@ -113,7 +113,7 @@ module.exports = function(grunt) {
             files: [{ expand: true, cwd: 'src/ls', src: ['**/*.ls'], dest: 'compiled/live/resources/pub/js', ext: '.js' }]
           }
         },
-        
+
         watch: {
             jade: {
               files: ['src/jade/**/*.jade'],
@@ -136,7 +136,7 @@ module.exports = function(grunt) {
         uglify: {
           options: {
             preserveComments: 'some'
-          },    
+          },
           live: {
             files: [
               { expand: true, cwd: 'build/public/js', src: ['**/*.js'], dest: 'release/prod/public/js', ext: '.js' }

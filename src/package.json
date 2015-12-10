@@ -1,38 +1,40 @@
 {
-    "name": "e-portfolio",
-    "description": "Tony Hall e-portfolio",
-    "author": "Tony Hall",
-    "private": true,
-    "version": "0.2.0",
-    "dependencies": {
-        "requirejs": "2.1.0",
-        "jquery": "2.1.4",
-        "jquery-ui": "1.10.5",
-        "datatables": "^1.10.0",
-        "bootstrap": "3.3.6",
-        "highcharts-release": "4.1.9",
-        "modernizr": "3.2.0"
-    },
-    "devDependencies": {
-        "bower": "1.3.9",
-        "gulp": "3.9.0",
-        "gulp-bower": "0.0.2",
-        "gulp-concat": "2.4.0",
-        "gulp-exec": "2.1.0",
-        "gulp-filter": "1.0.1",
-        "gulp-if": "1.2.4",
-        "gulp-jade": "0.7.0",
-        "gulp-jshint": "1.11.0",
-        "gulp-plumber": "0.6.5",
-        "gulp-strip-comments": "1.0.1",
-        "gulp-stylus": "1.3.0",
-        "gulp-util": "3.0.1",
-        "jshint-stylish": "2.0.1",
-        "main-bower-files": "1.0.1",
-        "matchdep": "0.3.0",
-        "nib": "1.0.3",
-        "node-notifier": "4.2.1",
-        "streamqueue": "0.1.1",
-        "tiny-lr": "0.1.1"
-    }
+  "name": "e-portfolio",
+  "description": "Tony Hall e-portfolio",
+  "author": "Tony Hall",
+  "private": true,
+  "version": "0.2.0",
+  "scripts": {
+    "build": "gulp build",
+    "dev": "gulp dev"
+  },
+  "dependencies": {
+    "requirejs": "2.1.0",
+    "jquery": "2.1.4",
+    "jquery-ui": "1.10.5",
+    "datatables": "^1.10.0",
+    "bootstrap": "3.3.6",
+    "highcharts-release": "4.1.9",
+    "modernizr": "3.2.0"
+  },
+  "devDependencies": {
+    "gulp": "3.9.0",
+    "gulp-concat": "2.4.0",
+    "gulp-exec": "2.1.0",
+    "gulp-filter": "1.0.1",
+    "gulp-if": "1.2.4",
+    "gulp-jade": "0.7.0",
+    "gulp-jshint": "1.11.0",
+    "gulp-plumber": "0.6.5",
+    "gulp-strip-comments": "1.0.1",
+    "gulp-stylus": "1.3.0",
+    "gulp-util": "3.0.1",
+    "http-dispatcher": "^0.2.2",
+    "jshint-stylish": "2.0.1",
+    "matchdep": "0.3.0",
+    "nib": "1.0.3",
+    "node-notifier": "4.2.1",
+    "streamqueue": "0.1.1",
+    "tiny-lr": "0.1.1"
+  }
 }
