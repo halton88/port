@@ -1,7 +1,7 @@
-//Lets require/import the HTTP module
 var path = require('path');
 var http = require('http');
 var fs = require('fs');
+var mime = require('mime');
 
 var PORT = 8099;
 var HOST = 'localhost';
@@ -18,56 +18,15 @@ var server = http.createServer(function (req, res) {
         page = path.join("..", req.url, "web", "/", "index.html");
 
     console.log("Page: " + page);
+    mime.lookup(page);
 
-    if (page.indexOf("html") > -1)
-        fs.readFile(page, interpretPage);
-    else if (page.indexOf("css") > -1)
-        fs.readFile(page, interpretStyle);
-    else if (page.indexOf("js") > -1)
-        fs.readFile(page, interpretScript);
-
-    function interpretPage(error, data) {
+    fs.readFile(page, function (error, data) {
         if (error) {
-            res.writeHead(404, {
-                "Content-type": "text/plain"
-            });
             res.end("Sorry the page was not found");
         } else {
-            res.writeHead(202, {
-                "Content-type": "text/html"
-            });
             res.end(data);
         }
-    }
-
-    function interpretStyle(error, data) {
-        if (error) {
-            res.writeHead(404, {
-                "Content-type": "text/plain"
-            });
-            res.end("Sorry the page was not found");
-        } else {
-            res.writeHead(202, {
-                "Content-type": "text/stylesheet"
-            });
-            res.end(data);
-        }
-    }
-
-    function interpretScript(error, data) {
-        if (error) {
-            res.writeHead(404, {
-                "Content-type": "text/plain"
-            });
-            res.end("Sorry the page was not found");
-        } else {
-
-            res.writeHead(202, {
-                "Content-type": "text/javascript"
-            });
-            res.end(data);
-        }
-    }
+    });
 
 });
 
