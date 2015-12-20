@@ -7,14 +7,16 @@ html
         meta(name="viewport",content="width=device-width, initial-scale=1")
         link(rel="shortcut icon",href="/web/favicon.ico")
         block stylesheets
-        link(rel='stylesheet', href='/resources/bootstrap/dist/css/bootstrap.min.css')
-        link(rel='stylesheet', href='/resources/bootstrap/dist/css/bootstrap-theme.min.css')
+        link(rel='stylesheet', href='/src/node_modules/bootstrap/dist/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/src/node_modules/bootstrap/dist/css/bootstrap-theme.min.css')
         link(rel='stylesheet', href='/web/styles.css')
     body.container-fluid
         nav.navbar.navbar-default.navbar-fixed-top.row
             include includes/navigation.jade
         section#main
-        footer
-            include includes/footer.jade
-//-        script(src='/web/require-config.js')
-//-        script(src='/resources/requirejs/require.js', data-main='../web/global')
+        include pages/home
+        include pages/resume
+        include pages/contact
+        include includes/footer.jade
+        script(src='/web/require-config.js')
+        script(src='src/node_modules/requirejs/require.js', data-main='../web/scripts')

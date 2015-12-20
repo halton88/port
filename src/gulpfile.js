@@ -1,4 +1,4 @@
-var stripComments, notifier, parentDir, modules_dir, gulp, gulpConcat, gulpUtil, gulpJshint, gulpStylus, streamqueue, gulpPlumber, nib, jshint, gutil, plumber, production, gulpJade, gulpFilter, livescript;
+var stripComments, notifier, parentDir, modules_dir, gulp, gulpConcat, gulpUtil, gulpJshint, gulpStylus, streamqueue, gulpPlumber, nib, jshint, gutil, plumber, production, gulpJade, gulpFilter;
 
 require('matchdep').filterDev('gulp-*').forEach(function (module) {
     global[module.replace(/^gulp-/, '')] = require(module);
@@ -17,7 +17,6 @@ streamqueue = require('streamqueue');
 gulpPlumber = require('gulp-plumber');
 nib = require('nib');
 jshint = require('gulp-jshint');
-livescript = require('gulp-livescript');
 gutil = gulpUtil;
 
 plumber = function () {
@@ -35,14 +34,14 @@ if (gutil.env.env === 'production') {
 
 gulp.task('default', ['build']);
 
-gulp.task('build', ['jade-compile', 'js:copy', 'ls:copy', 'css'], function () {
+gulp.task('build', ['jade-compile', 'js:copy', 'css'], function () {
     notifier.notify({
         title: 'Compilation Complete',
         message: "The code has been compiled in the project's root directory"
     });
 });
 
-gulp.task('dev', ['jade-compile', 'ls:copy', 'ls:app', 'css'], function (done) {
+gulp.task('dev', ['jade-compile', 'js:copy', 'css'], function (done) {
     gulp.watch(['jade/**/*.jade'], ['jade-compile']);
     return gulp.watch('stylus/**/*.styl', ['css']);
 });
@@ -60,22 +59,6 @@ gulp.task('jade-compile', function () {
 
 gulpFilter = require('gulp-filter');
 gulpConcat = require('gulp-concat');
-
-gulp.task('ls:copy', function () {
-    var s;
-    s = streamqueue({
-        objectMode: true
-    });
-
-    gulp.src(['ls/**/*.ls'])
-        .pipe(livescript())
-        .pipe(stripComments())
-        .pipe(jshint())
-        .pipe(jshint.reporter('jshint-stylish'))
-        .pipe(gulpConcat('scripts.js'))
-        .pipe(gulp.dest(parentDir + "/js"));
-    return s.done();
-});
 
 gulp.task('js:copy', function () {
     var s;
