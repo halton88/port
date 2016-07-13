@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300");
+body {
+  font-family: "Open Sans Condensed", "Trebuchet MS", Helvetica, sans-serif;
+  font-size: 14pt;
+  line-height: 1.5;
+}
+#connect-links img {
+  max-width: 50px;
+  max-height: 50px;
+}
+.navbar-brand img {
+  width: 80px;
+  height: 80px;
+}
+#site-title {
+  text-align: center;
+  font-family: "Calibri";
+}
+nav {
+  font-size: 0.9em;
+  font-weight: bold;
+}
+nav ul.nav li a:hover {
+  text-decoration: underline;
+}
+nav ul.nav li:not(.active) a,
+nav ul.nav li:not(.active) a:hover {
+  color: #000;
+  background: transparent;
+}
+nav ul.nav li.active a,
+nav ul.nav li.active:hover a {
+  background: #000;
+  color: #fff;
+}
+nav ul.nav li.dropdown.active a {
+  color: #000;
+  background: transparent;
+}
+nav ul.nav li.dropdown:hover {
+  text-decoration: underline;
+}
+#wrapper {
+  margin-top: 150px;
+}
+section:not(.active) {
+  display: none;
+}
+.caption {
+  text-align: center;
+  margin: 0 auto;
+}
+.caption img {
+  max-width: 31px;
+  max-height: 50px;
+}
+img#self {
+  max-width: 225px;
+  max-height: 300px;
+}
+table#inventoryTable {
+  min-width: 100%;
+}
+table#inventoryTable tbody tr.selected {
+  background-color: rgba(236,255,0,0.44);
+}
+#signature {
+  max-width: 250px;
+  max-height: 100px;
+}

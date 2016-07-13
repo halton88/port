@@ -1,0 +1,31 @@
+section.tab-pane.fade#backbone(role="tabpanel")
+	h3 Backbone
+	#appContainer
+		#editInventory
+			#controls
+				.form-group.col-xs-12.col-sm-3
+					input#year.form-control(type='text', placeholder='Enter Car Year', aria-label='Enter Car Year')
+				.form-group.col-xs-12.col-sm-4
+					input#make.form-control(type='text', placeholder='Enter Car Make', aria-label='Enter Car Make')
+				.form-group.col-xs-12.col-sm-4
+					input#model.form-control(type='text', placeholder='Enter Car Model', aria-label='Enter Car Model')
+				.form-group.col-xs-12.col-sm-1
+					button.btn.btn-default.add(type='button', aria-label='add item')
+						span.glyphicon.glyphicon-plus
+						span Add
+		h3 JQuery DataTables
+		#inventory.col-xs-12
+			table#inventoryTable.table.table-responsive.table-striped.table-bordered
+				thead
+					th ID
+					th Year
+					th Make
+					th Model
+				tfoot
+					th ID
+					th Year
+					th Make
+					th Model
+			button#remove.btn.btn-default.hide
+				span.glyphicon.glyphicon-minus
+				span Remove

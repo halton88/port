@@ -1,8 +1,6 @@
-//- block scripts
-//- 	script(src='resources/pub/js/app/pages/original-sp.js')
-.row
+section.tab-pane.fade#original-sp(role="tabpanel")
 	h2.text-centered {{ title }}: Screencast Demonstration
-	.col-md-offset-2.col-lg-offset-2.embed-responsive.embed-responsive-16by9
+	.embed-responsive
 		object.embed-responsive-item(type='application/x-shockwave-flash', data='http://content.screencast.com/users/halton88/folders/Default/media/a051a20f-11ad-4f65-b58d-5ed299727329/bootstrap.swf?wmode=transparent')
 		param(name='wmode', value='transparent')
 		param(name='movie', value='http://content.screencast.com/users/halton88/folders/Default/media/a051a20f-11ad-4f65-b58d-5ed299727329/bootstrap.swf')
@@ -14,7 +12,6 @@
 		param(name='allowScriptAccess', value='always')
 		param(name='base', value='http://content.screencast.com/users/halton88/folders/Default/media/a051a20f-11ad-4f65-b58d-5ed299727329/')
 		| Unable to display content. Adobe Flash is required.
-.row
 	.well
 		h3 Web Technologies used:
 		ul

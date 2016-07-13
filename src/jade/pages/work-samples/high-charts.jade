@@ -1,9 +1,5 @@
-//- .container
-		//- #content.container-fluid
-		//- 	.col-md-7.col-sm-8.row.pull-right
-		//- 		button#version-select.btn.btn-default.form-control.dropdown-toggle(type="button",data-toggle="dropdown") {{title}} - Chart History 
-		//- 			span.caret
-				ul.dropdown-menu(role="menu")
-#graph-pie.chart.col-md-4.col-lg-4.pull-left.row
-#graph-column.chart.col-md-4.col-lg-4.pull-left.row
-#graph-donut.chart.col-md-4.col-lg-4.pull-left.row
+section.tab-pane.fade#highcharts(role="tabpanel")
+	h3 Highcharts
+	#graph-pie.chart
+	#graph-column.chart
+	#graph-donut.chart

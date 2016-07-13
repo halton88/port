@@ -1,36 +1,38 @@
-a.col-md-offset-1.col-lg-offset-1.navbar-brand(href="#/")
-  img.img-thumbnail.off-white(src='resources/pub/images/brand-logo.png')
-h2.text-center#site-title Tony Hall E-Porfolio
-.row.navbar-header.off-white.col-md-offset-5.col-lg-offset-5
-  .col-md-12.col-lg-12
-    ul(role="navigation").nav.navbar-nav
-      li
-        a.small(href='#/')
-          span.glyphicon.glyphicon-home
-      li
-        a.small(href='#/resume') Resume
-      li
-        a.small(href='#/video-edit') Video Editing
-      li.dropdown(role="presentation")
-        a.small.dropdown-toggle(data-toggle="dropdown", role="button", href='#', aria-expanded="false") Web
-        ul.dropdown-menu(role="menu")
-          li 
-            a.small(href='#/web/themes') Themes
-          //- li 
-          //-   a.small(href='#/web/as-flash') Adobe Flash
-          li 
-            a.small(href='#/web/updated-sp') Updated Capstone
-          li 
-            a.small(href='#/web/original-sp') Original Capstone
-      li.dropdown(role="presentation")
-        a.small.dropdown-toggle(data-toggle="dropdown", role="button", href='#', aria-expanded="false") Work Samples
-        ul.dropdown-menu(role="menu")
-          li 
-            a.small(href='/app/home', target='_blank') PHP Application
-      //- li
-      //-   a(href='#/contact') Contact
-//- .container.row.col-md-offset-1.col-lg-offset-1
-//-   ol.breadcrumb
-//-     li
-//-       a(href="#/") Home
-//-     li.active {{ title }}
+nav.navbar.navbar-default.navbar-fixed-top
+	.navbar-brand
+		img.img-thumbnail(src='images/brand-logo.png')
+	.row
+		.col-xs-12.col-sm-10
+			h2#site-title Tony Hall E-Porfolio
+			button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#main-nav', aria-controls='main-nav', aria-expanded='false')
+				span.sr-only Toggle navigation
+				span.icon-bar
+				span.icon-bar
+				span.icon-bar
+			header
+				ul#main-nav.nav.navbar-right.nav-justified.navbar-collapse(role="tablist")
+					li.active(role="presentation")
+						a(href="#home", aria-controls="home", role="tab", data-toggle="tab", title="Home") Home
+					li(role="presentation")
+						a(href="#skills", aria-controls="skills", role="tab", data-toggle="tab", title="Skills") Skills
+					li.dropdown
+						a.dropdown-toggle(href="#",data-toggle="dropdown" role="button", aria-haspopup="true", aria-expanded="false")
+							| Code Samples
+							span.caret
+						ul.dropdown-menu
+							li
+								a(aria-controls="jade", role="tab", data-toggle="tab", href='#jade', title="Code Samples - Jade Templating")
+									| Jade
+
+							li
+								a(aria-controls="gulp", role="tab", data-toggle="tab", href='#gulp',title="Code Samples - Gulp")
+									| Gulp
+							li
+								a(aria-controls="highcharts", role="tab", data-toggle="tab", href='#highcharts',
+								title="Code Samples - Highcharts")
+									| Highcharts
+							li
+								a(aria-controls="backbone", role="tab", data-toggle="tab", href='#backbone', title="Code Samples - Backbone")
+									| Backbone and Datatables
+//- li
+//-a(href='#/contact') Contact

@@ -1,0 +1,28 @@
+section.fade#jade(role="tabpanel")
+	h3 Jade Templating
+	| View Jade templates
+	a(href="#", target="_blank")  code sample
+	|  on my GitHub
+	h4 Brief Intro to Jade
+	p
+		| Jade (recently renamed to Pug) is a templating engine that once compiled, outputs HTML code.
+		| It uses a tabbed based struture to determine the heirarchy of the html file.
+	h4 Advantages to using Jade over plain HTML
+	ul
+		li
+			b Maintainable.
+			| Building Jade temnplate allows you to organize the code by being able to separate code in blocks
+			| or separate files. Coding one base index html file can become tedious therefore separating the code logically brings
+			| some structure to the code base. Then  once you are ready to build the base index html file you can just include
+			| multiple jade files in one file, which once compiled will give you the index file with all the page
+			| elements where you want them.
+		li
+			b Keeping things DRY.
+			| If you are like me then you don't like repeating yourself. As a developer, if you are building the same
+			| code repeatedly then you are doing something wrong. With jade you can have one code snippet for example let's say a header
+			| or footer that you can keep in a separate file and then reuse across different jade files by including it within the other
+			| files.
+		li
+			b Less Code.
+			| Because the syntax of Jade removes the need for certain elements that would be required in a HTML file, you are left with
+			| a shorter document overall that is easier to read and maintain.

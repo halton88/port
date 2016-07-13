@@ -1,26 +1,25 @@
-//- block scripts
-//- 	script(src='resources/pub/js/app/pages/updated-sp.js')
-.row
-	h2.text-centered {{ title }}: Screencast Demonstration
-	.col-md-offset-2.col-lg-offset-2.embed-responsive.embed-responsive-16by9
-		object.embed-responsive-item(type='application/x-shockwave-flash', data='http://content.screencast.com/users/halton88/folders/Default/media/aea78b7e-7bff-4d26-97a9-a0e8cbd302c3/bootstrap.swf?wmode=transparent',height="70%")
-		param(name='wmode', value='transparent')
-		param(name='movie', value='http://content.screencast.com/users/halton88/folders/Default/media/aea78b7e-7bff-4d26-97a9-a0e8cbd302c3/bootstrap.swf')
-		param(name='quality', value='high')
-		param(name='bgcolor', value='#FFFFFF')
-		param(name='flashVars', value='thumb=http://content.screencast.com/users/halton88/folders/Default/media/aea78b7e-7bff-4d26-97a9-a0e8cbd302c3/FirstFrame.jpg&containerwidth=1366&containerheight=768&content=http://content.screencast.com/users/halton88/folders/Default/media/aea78b7e-7bff-4d26-97a9-a0e8cbd302c3/updated_senior_project_demo.swf&blurover=false')
-		param(name='allowFullScreen', value='true')
-		param(name='scale', value='showall')
-		param(name='allowScriptAccess', value='always')
-		param(name='base', value='http://content.screencast.com/users/halton88/folders/Default/media/aea78b7e-7bff-4d26-97a9-a0e8cbd302c3/')
-		| Unable to display content. Adobe Flash is required.
-.row
-	.well
-		h3 Web Technologies used:
-		ul
-			li HTML - Web pages, templates, forms
-			li CSS3 - border modifications, text modifications
-			li PHP - Password encryption, SQL queries and data validation
-			li MySQL - database management
-			li JQuery - content display
-			li Javascript - data validation
+section.tab-pane.fade#updated-sp(role="tabpanel")
+	.row
+		h2.text-centered {{ title }}: Screencast Demonstration
+		.embed-responsive.embed-responsive-16by9
+			object.embed-responsive-item(type='application/x-shockwave-flash', data='http://content.screencast.com/users/halton88/folders/Default/media/aea78b7e-7bff-4d26-97a9-a0e8cbd302c3/bootstrap.swf?wmode=transparent',height="70%")
+			param(name='wmode', value='transparent')
+			param(name='movie', value='http://content.screencast.com/users/halton88/folders/Default/media/aea78b7e-7bff-4d26-97a9-a0e8cbd302c3/bootstrap.swf')
+			param(name='quality', value='high')
+			param(name='bgcolor', value='#FFFFFF')
+			param(name='flashVars', value='thumb=http://content.screencast.com/users/halton88/folders/Default/media/aea78b7e-7bff-4d26-97a9-a0e8cbd302c3/FirstFrame.jpg&containerwidth=1366&containerheight=768&content=http://content.screencast.com/users/halton88/folders/Default/media/aea78b7e-7bff-4d26-97a9-a0e8cbd302c3/updated_senior_project_demo.swf&blurover=false')
+			param(name='allowFullScreen', value='true')
+			param(name='scale', value='showall')
+			param(name='allowScriptAccess', value='always')
+			param(name='base', value='http://content.screencast.com/users/halton88/folders/Default/media/aea78b7e-7bff-4d26-97a9-a0e8cbd302c3/')
+			| Unable to display content. Adobe Flash is required.
+	.row
+		.well
+			h3 Web Technologies used:
+			ul
+				li HTML - Web pages, templates, forms
+				li CSS3 - border modifications, text modifications
+				li PHP - Password encryption, SQL queries and data validation
+				li MySQL - database management
+				li JQuery - content display
+				li Javascript - data validation
